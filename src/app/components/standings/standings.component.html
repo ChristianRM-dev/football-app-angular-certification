@@ -1,0 +1,30 @@
+<table class="table"  *ngIf="standingsData$ | async as data; else loading">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Name</th>
+      <th>Games</th>
+      <th>W</th>
+      <th>L</th>
+      <th>D</th>
+      <th>Goal Difference</th>
+      <th>Points</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let standing of data">
+        <td></td>
+        <td>3</td>
+        <td>{{standing.team.name}}</td>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+    </tr>
+  </tbody>
+</table>
+<ng-template #loading>Loading...</ng-template>

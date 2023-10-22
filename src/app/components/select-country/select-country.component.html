@@ -1,0 +1,12 @@
+<div class="columns is-mobile is-multiline is-centered">
+  <div class="column is-narrow" *ngFor="let league of leagues">
+    <button
+      class="button is-rounded"
+      [id]="builCountryId(league.country)"
+      [ngClass]="league.country == selectedCountry ? 'is-primary' : ''"
+      (click)="selectLeague(league)"
+    >
+      {{ league.country }}
+    </button>
+  </div>
+</div>

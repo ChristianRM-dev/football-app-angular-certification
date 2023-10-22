@@ -3,16 +3,29 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SelectCountryComponent } from './components/select-country/select-country.component';
+import { HomeComponent } from './components/home/home.component';
+import { StandingsComponent } from './components/standings/standings.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { FootBallInterceptor } from './core/interceptors/foot-ball.interceptor';
+import { TeamResultsComponent } from './components/team-results/team-results.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SelectCountryComponent,
+    HomeComponent,
+    StandingsComponent,
+    TeamResultsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: FootBallInterceptor,
+      multi: true,
+    },
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
