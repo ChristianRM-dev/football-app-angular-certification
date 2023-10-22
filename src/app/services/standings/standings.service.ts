@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 import { Observable, from } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import {
-  LeagueResponse,
-  Standing,
-} from '../../models/standings/standings-response.model';
-import { ApiResponseWrapper } from 'src/app/models/api-response.model';
+import { LeagueResponse, Standing } from '@models/standings/standings-response.model';
+import { ApiResponseWrapper } from '@models/api-response.model';
+
+
 
 @Injectable({
   providedIn: 'root',
@@ -37,16 +36,14 @@ export class StandingsService {
 
   private makeLeagueStandingsRequest(leagueId: number): Observable<Standing[]> {
     const season: number = new Date().getFullYear();
-    const params = {
+    const queryParams = {
       league: `${leagueId}`,
       season: `${season}`,
     };
+    const params = new HttpParams({ fromObject: queryParams });
 
-    const queryParams = new URLSearchParams(params);
-
-    const url = 'assets/data/standings.json';
-    // const url = `/standings?${queryParams}`
-    return this.http.get<ApiResponseWrapper<LeagueResponse[]>>(url).pipe(
+    const url = `/standings`
+    return this.http.get<ApiResponseWrapper<LeagueResponse[]>>(url,{params}).pipe(
       map((data) => {
         this.standingsCache.push(data.response[0]);
         return data.response[0].league.standings[0];

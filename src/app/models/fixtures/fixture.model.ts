@@ -6,7 +6,7 @@ export interface FixtureResponse {
   score: Score;
 }
 
-export interface Fixture {
+interface Fixture {
   id: number;
   referee: null;
   timezone: string;
@@ -17,41 +17,41 @@ export interface Fixture {
   status: Status;
 }
 
-export interface Periods {
+interface Periods {
   first: number;
   second: null;
 }
 
-export interface Status {
+interface Status {
   long: string;
   short: string;
   elapsed: number;
 }
 
-export interface Venue {
+interface Venue {
   id: number;
   name: string;
   city: string;
 }
 
 interface Teams {
-  home: AwayClass
-  away: AwayClass
+  home: AwayClass;
+  away: AwayClass;
 }
 
-export interface Goals {
-  home: number
-  away: number
+interface Goals {
+  home: number;
+  away: number;
 }
 
-export interface AwayClass {
+interface AwayClass {
   id: number;
   name: string;
   logo: string;
   winner: boolean;
 }
 
-export interface League {
+interface League {
   id: number;
   name: string;
   country: string;
@@ -61,7 +61,7 @@ export interface League {
   round: string;
 }
 
-export interface Score {
+interface Score {
   halftime: Goals;
   fulltime: Goals;
   extratime: Goals;

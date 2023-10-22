@@ -2,7 +2,7 @@ export interface LeagueResponse {
   league: League;
 }
 
-export interface League {
+ interface League {
   id: number;
   name: string;
   country: string;
@@ -27,7 +27,7 @@ export interface Standing {
   update: Date;
 }
 
-export interface All {
+ interface All {
   played: number;
   win: number;
   draw: number;
@@ -35,12 +35,12 @@ export interface All {
   goals: Goals;
 }
 
-export interface Goals {
+ interface Goals {
   for: number;
   against: number;
 }
 
-export interface Team {
+ interface Team {
   id: number;
   name: string;
   logo: string;

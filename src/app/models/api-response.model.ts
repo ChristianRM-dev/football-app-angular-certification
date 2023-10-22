@@ -7,11 +7,11 @@ export interface ApiResponseWrapper<T> {
   response: T;
 }
 
-export interface Parameters {
+ interface Parameters {
   [key: string]: string;
 }
 
-export interface Paging {
+ interface Paging {
   current: number;
   total: number;
 }
