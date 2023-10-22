@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 
-import { StandingsResponse } from 'src/app/models/standings/standings-response.model';
+import { StandingsResponse } from '../../models/standings/standings-response.model';
 
 @Injectable({
   providedIn: 'root',

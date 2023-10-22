@@ -3,14 +3,14 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 
-import { League } from 'src/app/models/league/league.model';
+import { League } from '../../models/league/league.model';
 
 import {
   Standing,
   StandingsResponse,
-} from 'src/app/models/standings/standings-response.model';
-import { LeagueService } from 'src/app/services/league/league.service';
-import { StandingsService } from 'src/app/services/standings/standings.service';
+} from '../..//models/standings/standings-response.model';
+import { LeagueService } from '../../services/league/league.service';
+import { StandingsService } from '../../services/standings/standings.service';
 
 @Component({
   selector: 'app-standings',

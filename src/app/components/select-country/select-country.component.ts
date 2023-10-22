@@ -6,9 +6,9 @@ import {
   Output,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { League } from 'src/app/models/league/league.model';
+import { League } from '../../models/league/league.model';
 
-import { LeagueService } from 'src/app/services/league/league.service';
+import { LeagueService } from '../../services/league/league.service';
 
 @Component({
   selector: 'app-select-country',
