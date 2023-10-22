@@ -3,7 +3,7 @@
     <button
       class="button is-rounded"
       [id]="builCountryId(league.country)"
-      [ngClass]="league.country == selectedCountry ? 'is-primary' : ''"
+      [ngClass]="league.country == selectedCountry ? 'is-link' : ''"
       (click)="selectLeague(league)"
     >
       {{ league.country }}

@@ -1,1 +1,32 @@
-<p>team-results works!</p>
+<div *ngIf="fixturesData$ | async as data; else loading">
+  <table class="table">
+    <!-- <thead>
+      <tr>
+        <th></th>
+        <th></th>
+        <th>Name</th>
+        <th>Games</th>
+        <th>W</th>
+        <th>L</th>
+        <th>D</th>
+        <th>Goal Difference</th>
+        <th>Points</th>
+      </tr>
+    </thead> -->
+
+    <tbody>
+      <tr *ngFor="let fixture of data; index as i">
+        <td>{{ i }}</td>
+        <td><img [src]="fixture.teams!.home.logo" alt="" /></td>
+        <td>{{ fixture.teams!.home.name }}</td>
+        <td>{{ fixture.goals!.home }}</td>
+        <td>-</td>
+        <td>{{ fixture.goals!.away }}</td>
+        <td>{{ fixture.teams!.away.name }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="button is-link" (click)="backToMainPage()">Back</button>
+</div>
+<ng-template #loading>Loading...</ng-template>

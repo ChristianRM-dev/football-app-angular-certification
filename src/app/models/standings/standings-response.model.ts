@@ -1,22 +1,3 @@
-export interface StandingsResponse {
-  get: string;
-  parameters: Parameters;
-  errors: any[];
-  results: number;
-  paging: Paging;
-  response: LeagueResponse[];
-}
-
-export interface Paging {
-  current: number;
-  total: number;
-}
-
-export interface Parameters {
-  league: string;
-  season: string;
-}
-
 export interface LeagueResponse {
   league: League;
 }

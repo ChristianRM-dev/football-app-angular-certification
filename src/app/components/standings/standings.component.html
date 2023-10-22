@@ -1,4 +1,4 @@
-<table class="table"  *ngIf="standingsData$ | async as data; else loading">
+<table class="table" *ngIf="standingsData$ | async as data; else loading">
   <thead>
     <tr>
       <th></th>
@@ -15,15 +15,21 @@
 
   <tbody>
     <tr *ngFor="let standing of data">
-        <td></td>
-        <td>3</td>
-        <td>{{standing.team.name}}</td>
-        <td>3</td>
-        <td>3</td>
-        <td>3</td>
-        <td>3</td>
-        <td>3</td>
-        <td>3</td>
+      <td>{{ standing.rank }}</td>
+      <td>
+        <img [src]="standing.team.logo" [alt]="standing.team.name" />
+      </td>
+      <td>
+        <a [routerLink]="['/team-results', standing.team.id]">
+          {{ standing.team.name }}
+        </a>
+      </td>
+      <td>{{ standing.all.played }}</td>
+      <td>{{ standing.all.win }}</td>
+      <td>{{ standing.all.lose }}</td>
+      <td>{{ standing.all.draw }}</td>
+      <td>{{ standing.goalsDiff }}</td>
+      <td>{{ standing.points }}</td>
     </tr>
   </tbody>
 </table>

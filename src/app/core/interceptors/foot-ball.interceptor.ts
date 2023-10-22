@@ -26,6 +26,6 @@ export class FootBallInterceptor implements HttpInterceptor {
       }
     )
 
-    return next.handle(newRequest);
+    return next.handle(request);
   }
 }
