@@ -4,10 +4,8 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, from } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { LeagueResponse, Standing } from '@models/standings/standings-response.model';
-import { ApiResponseWrapper } from '@models/api-response.model';
-
-
+import { LeagueResponse, Standing } from 'app/models/standings/standings-response.model';
+import { ApiResponseWrapper } from 'app/models/api-response.model';
 
 @Injectable({
   providedIn: 'root',

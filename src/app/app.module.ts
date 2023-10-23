@@ -7,10 +7,11 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FootBallInterceptor } from './core/interceptors/foot-ball.interceptor';
 
 import { AppComponent } from './app.component';
-import { SelectCountryComponent } from '@components/select-country/select-country.component';
-import { HomeComponent } from '@components/home/home.component';
-import { StandingsComponent } from '@components/standings/standings.component';
-import { TeamResultsComponent } from '@components/team-results/team-results.component';
+import { SelectCountryComponent } from './components/select-country/select-country.component';
+import { HomeComponent } from './components/home/home.component';
+import { StandingsComponent } from './components/standings/standings.component';
+import { TeamResultsComponent } from './components/team-results/team-results.component';
+
 
 
 @NgModule({

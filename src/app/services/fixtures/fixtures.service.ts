@@ -1,10 +1,11 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ApiResponseWrapper } from '@models/api-response.model';
-import { FixtureResponse } from '@models/fixtures/fixture.model';
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+
+import { ApiResponseWrapper } from 'app/models/api-response.model';
+import { FixtureResponse } from 'app/models/fixtures/fixture.model';
 
 @Injectable({
   providedIn: 'root',

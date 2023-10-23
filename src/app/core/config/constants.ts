@@ -1,4 +1,4 @@
-import { League } from "@models/league/league.model";
+import { League } from "app/models/league/league.model";
 
 export class Constants {
   static leagues: League[] = [

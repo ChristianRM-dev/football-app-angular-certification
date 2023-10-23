@@ -17,12 +17,12 @@
     "target": "es2015",
     "module": "es2020",
     "lib": ["es2018", "dom"],
-    "paths": {
-      "@components/*": ["app/components/*"],
-      "@services/*": ["app/services/*"],
-      "@models/*": ["app/models/*"],
-      "@core/*": ["app/core/*"]
-    }
+    // "paths": {
+    //   "@components/*": ["app/components/*"],
+    //   "@services/*": ["app/services/*"],
+    //   "@models/*": ["app/models/*"],
+    //   "@core/*": ["app/core/*"]
+    // }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

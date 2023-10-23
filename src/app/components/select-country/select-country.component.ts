@@ -8,8 +8,11 @@ import {
 
 import { Subscription } from 'rxjs';
 
-import { LeagueService } from '@services/league/league.service';
-import { League } from '@models/league/league.model';
+import { League } from 'app/models/league/league.model';
+import { LeagueService } from 'app/services/league/league.service';
+
+
+
 
 @Component({
   selector: 'app-select-country',
