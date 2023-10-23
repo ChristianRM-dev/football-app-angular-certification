@@ -1,5 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
+html, body {
+  background-attachment: fixed;
+  background-image: url("/assets/images/background.jpg");
+  background-position: top;
+  background-size: cover;
+  margin: 0;
+  height: 100%;
+}
+
 table {
   margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+image{
+  width: 2rem !important;
 }
