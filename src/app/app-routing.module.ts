@@ -13,6 +13,10 @@ const routes: Routes = [
     path: 'team-results/:id',
     component: TeamResultsComponent,
   },
+  {
+    path: '**',
+    component: HomeComponent,
+  },
 ];
 
 @NgModule({
