@@ -12,7 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { StandingsComponent } from './components/standings/standings.component';
 import { TeamResultsComponent } from './components/team-results/team-results.component';
 
-import { HttpCacheInterceptorModule } from '@ngneat/cashew';
+import { HttpCacheInterceptorModule, useHttpCacheLocalStorage } from '@ngneat/cashew';
 
 @NgModule({
   declarations: [
@@ -34,6 +34,7 @@ import { HttpCacheInterceptorModule } from '@ngneat/cashew';
       useClass: FootBallInterceptor,
       multi: true,
     },
+    useHttpCacheLocalStorage
   ],
   bootstrap: [AppComponent],
 })

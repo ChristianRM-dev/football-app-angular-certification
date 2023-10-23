@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiKey:"dce1bad92c87b6b664285eab495c010b",
+  apiKey:"537fafa5574fa98399ea286118f834d0",
   apiBaseUrl:"https://v3.football.api-sports.io",
 
 };
