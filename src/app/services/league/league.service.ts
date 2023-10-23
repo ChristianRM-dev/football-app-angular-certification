@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { BehaviorSubject, Observable } from 'rxjs';
 
-import { Constants } from 'app/core/config/constants';
-import { League } from 'app/models/league/league.model';
+import { Constants } from '../../core/config/constants';
+import { League } from '../../models/league/league.model';
 
 @Injectable({
   providedIn: 'root',

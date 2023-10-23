@@ -3,10 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
-import { League } from 'app/models/league/league.model';
-import { Standing } from 'app/models/standings/standings-response.model';
-import { LeagueService } from 'app/services/league/league.service';
-import { StandingsService } from 'app/services/standings/standings.service';
+import { League } from '../../models/league/league.model';
+import { Standing } from '../../models/standings/standings-response.model';
+import { LeagueService } from '../../services/league/league.service';
+import { StandingsService } from '../../services/standings/standings.service';
 
 @Component({
   selector: 'app-standings',
