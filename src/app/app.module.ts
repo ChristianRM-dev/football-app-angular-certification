@@ -12,7 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { StandingsComponent } from './components/standings/standings.component';
 import { TeamResultsComponent } from './components/team-results/team-results.component';
 
-
+import { HttpCacheInterceptorModule } from '@ngneat/cashew';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,12 @@ import { TeamResultsComponent } from './components/team-results/team-results.com
     StandingsComponent,
     TeamResultsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    HttpCacheInterceptorModule.forRoot()
+  ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

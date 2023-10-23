@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 
 import { ApiResponseWrapper } from '../../models/api-response.model';
 import { FixtureResponse } from '../../models/fixtures/fixture.model';
+import { withCache } from '@ngneat/cashew';
 
 @Injectable({
   providedIn: 'root',
@@ -14,18 +15,14 @@ export class FixturesService {
   constructor(private http: HttpClient) {}
 
   getFixtures(team: number, last: number): Observable<FixtureResponse[]> {
-    const queryParams = {
+    const params = {
       team: `${team}`,
       last: `${last}`,
     };
 
-
-    const params = new HttpParams({ fromObject: queryParams });
     const url = `/fixtures`;
     return this.http
-      .get<ApiResponseWrapper<FixtureResponse[]>>(url, {
-        params,
-      })
+      .get<ApiResponseWrapper<FixtureResponse[]>>(url, withCache(params))
       .pipe(map((response) => response.response));
   }
 }
