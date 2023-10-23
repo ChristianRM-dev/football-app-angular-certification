@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { catchError, map, switchMap } from 'rxjs/operators';
 
 import { FixtureResponse } from '../../models/fixtures/fixture.model';
 import { FixturesService } from '../../services/fixtures/fixtures.service';
@@ -21,7 +21,11 @@ export class TeamResultsComponent implements OnInit {
   ) {
     this.fixturesData$ = this.route.params.pipe(
       map((params) => Number(params.id)),
-      switchMap((id: number) => this.fixturesService.getFixtures(id, 10))
+      switchMap((id: number) => this.fixturesService.getFixtures(id, 10)),
+      catchError(() => {
+        alert('Something went wrong 😥');
+        return [];
+      })
     );
   }
 

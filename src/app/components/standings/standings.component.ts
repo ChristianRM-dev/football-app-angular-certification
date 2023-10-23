@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { catchError, switchMap } from 'rxjs/operators';
 
 import { League } from '../../models/league/league.model';
 import { Standing } from '../../models/standings/standings-response.model';
@@ -23,13 +23,19 @@ export class StandingsComponent implements OnInit {
     this.standingsData$ = new Observable();
 
     this.standingsData$ = this.leagueService.selectedLeague.pipe(
-      switchMap((league) => this.standingsService.getLeagueStandings(league.id))
+      switchMap((league) =>
+        this.standingsService.getLeagueStandings(league.id)
+      ),
+      catchError(() => {
+        alert('Something went wrong 😥');
+        return [];
+      })
     );
   }
 
   ngOnInit(): void {}
 
-  onLeagueChange(league:League):void{
-    this.leagueService.setSelectedLeague(league)
+  onLeagueChange(league: League): void {
+    this.leagueService.setSelectedLeague(league);
   }
 }
