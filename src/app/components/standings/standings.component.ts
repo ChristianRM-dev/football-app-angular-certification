@@ -6,6 +6,7 @@ import { switchMap } from 'rxjs/operators';
 import { Standing } from '@models/standings/standings-response.model';
 import { LeagueService } from '@services/league/league.service';
 import { StandingsService } from '@services/standings/standings.service';
+import { League } from '@models/league/league.model';
 
 @Component({
   selector: 'app-standings',
@@ -27,4 +28,8 @@ export class StandingsComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  onLeagueChange(league:League):void{
+    this.leagueService.setSelectedLeague(league)
+  }
 }

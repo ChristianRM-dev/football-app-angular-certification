@@ -1,14 +1,15 @@
 import {
   Component,
+  EventEmitter,
   OnDestroy,
   OnInit,
+  Output,
 } from '@angular/core';
 
 import { Subscription } from 'rxjs';
 
 import { LeagueService } from '@services/league/league.service';
 import { League } from '@models/league/league.model';
-
 
 @Component({
   selector: 'app-select-country',
@@ -17,11 +18,13 @@ import { League } from '@models/league/league.model';
 })
 export class SelectCountryComponent implements OnInit, OnDestroy {
   selectedCountry: string;
-  leagues: League[];
   private subscriptions: Subscription[];
+  leagues: League[];
+  @Output() leagueChange: EventEmitter<League>;
 
   constructor(private leagueService: LeagueService) {
     this.leagues = this.leagueService.getLeagues();
+    this.leagueChange = new EventEmitter<League>();
     this.selectedCountry = '';
     this.subscriptions = [];
 
@@ -35,13 +38,13 @@ export class SelectCountryComponent implements OnInit, OnDestroy {
   ngOnInit(): void {}
 
   selectLeague(league: League) {
-    this.leagueService.setSelectedLeague(league);
+    this.leagueChange.emit(league);
+    this.selectedCountry = league.country;
   }
 
   builCountryId(country: string): string {
     return `${country.toLocaleLowerCase()}Select`;
   }
-
   ngOnDestroy(): void {
     this.subscriptions.forEach((x) => x.unsubscribe());
   }

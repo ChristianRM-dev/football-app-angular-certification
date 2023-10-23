@@ -18,4 +18,8 @@
 
   <button class="button is-link" (click)="backToMainPage()">Back</button>
 </div>
-<ng-template #loading>Loading...</ng-template>
+<ng-template #loading>
+  <div class="container is-fluid mt-5">
+    <progress class="progress is-large is-info" max="100">60%</progress>
+  </div>
+</ng-template>
